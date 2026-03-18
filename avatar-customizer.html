@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet" />
+    <link href="css/avatar-customizer.css" rel="stylesheet" />
+    <title>Avatar Customizer</title>
+    <link href="css/page-transition.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="pageLoader" class="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="images/logo.png" alt="Việt Sử Ký Logo">
+            </div>
+            <div class="loader-title">Việt Sử Ký</div>
+            <div class="loader-text">Đang tải...</div>
+            <div class="loader-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="progress-percentage">0%</div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Avatar Customization Section -->
+        <div class="customization-section" id="customization-section">
+            <!-- Avatar Preview Section -->
+            <div class="avatar-preview-section">
+                <div class="name-input-section">
+                    <input type="text" id="avatar-name" placeholder="Nhập tên" class="name-input">
+                </div>
+
+                <div class="avatar-preview">
+                    <div class="avatar-container">
+                        <!-- Character avatar will be displayed here -->
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-back" id="btn-back" data-navigate="index">Quay lại</button>
+                    <button class="btn-complete" id="btn-complete">Hoàn thành</button>
+                </div>
+            </div>
+
+            <!-- Customization Panel -->
+            <div class="customization-panel">
+                <!-- Category Tabs -->
+                <div class="category-tabs">
+                    <button class="tab-button active" data-category="toc">Kiểu tóc</button>
+                    <button class="tab-button" data-category="trangphuc">Trang phục</button>
+                    <button class="tab-button" data-category="phukien">Phụ kiện</button>
+                    <button class="tab-button" data-category="bieucam">Biểu cảm</button>
+                </div>
+
+                <!-- Items Grid -->
+                <div class="items-container">
+                    <!-- Hair Options -->
+                    <div class="items-grid" id="toc-grid" data-category="toc">
+                        <div class="item-option" data-item="toc1.svg">
+                            <img src="images/game/toc/toc1.svg" alt="Hair 1">
+                        </div>
+                        <div class="item-option" data-item="toc2.svg">
+                            <img src="images/game/toc/toc2.svg" alt="Hair 2">
+                        </div>
+                        <div class="item-option" data-item="toc3.svg">
+                            <img src="images/game/toc/toc3.svg" alt="Hair 3">
+                        </div>
+                        <div class="item-option" data-item="toc4.svg">
+                            <img src="images/game/toc/toc4.svg" alt="Hair 4">
+                        </div>
+                        <div class="item-option" data-item="toc5.svg">
+                            <img src="images/game/toc/toc5.svg" alt="Hair 5">
+                        </div>
+                    </div>
+
+                    <!-- Outfit Options -->
+                    <div class="items-grid hidden" id="trangphuc-grid" data-category="trangphuc">
+                        <div class="item-option" data-item="tp1.svg">
+                            <img src="images/game/trangphuc/tp1.svg" alt="Outfit 1">
+                        </div>
+                        <div class="item-option" data-item="tp2.svg">
+                            <img src="images/game/trangphuc/tp2.svg" alt="Outfit 2">
+                        </div>
+                        <div class="item-option" data-item="tp3.svg">
+                            <img src="images/game/trangphuc/tp3.svg" alt="Outfit 3">
+                        </div>
+                        <div class="item-option" data-item="tp4.svg">
+                            <img src="images/game/trangphuc/tp4.svg" alt="Outfit 4">
+                        </div>
+                        <div class="item-option" data-item="tp5.svg">
+                            <img src="images/game/trangphuc/tp5.svg" alt="Outfit 5">
+                        </div>
+                        <div class="item-option" data-item="tp6.svg">
+                            <img src="images/game/trangphuc/tp6.svg" alt="Outfit 6">
+                        </div>
+                    </div>
+
+                    <!-- Accessory Options -->
+                    <div class="items-grid hidden" id="phukien-grid" data-category="phukien">
+                        <div class="item-option" data-item="pk1.svg">
+                            <img src="images/game/phukien/pk1.svg" alt="Accessory 1">
+                        </div>
+                        <div class="item-option" data-item="pk2.svg">
+                            <img src="images/game/phukien/pk2.svg" alt="Accessory 2">
+                        </div>
+                        <div class="item-option" data-item="pk3.svg">
+                            <img src="images/game/phukien/pk3.svg" alt="Accessory 3">
+                        </div>
+                        <div class="item-option" data-item="pk4.svg">
+                            <img src="images/game/phukien/pk4.svg" alt="Accessory 4">
+                        </div>
+                        <div class="item-option" data-item="pk5.svg">
+                            <img src="images/game/phukien/pk5.svg" alt="Accessory 5">
+                        </div>
+                    </div>
+
+                    <!-- Expression Options -->
+                    <div class="items-grid hidden" id="bieucam-grid" data-category="bieucam">
+                        <div class="item-option" data-item="bc1.svg">
+                            <img src="images/game/bieucam/bc1.svg" alt="Expression 1">
+                        </div>
+                        <div class="item-option" data-item="bc2.svg">
+                            <img src="images/game/bieucam/bc2.svg" alt="Expression 2">
+                        </div>
+                        <div class="item-option" data-item="bc3.svg">
+                            <img src="images/game/bieucam/bc3.svg" alt="Expression 3">
+                        </div>
+                        <div class="item-option" data-item="bc4.svg">
+                            <img src="images/game/bieucam/bc4.svg" alt="Expression 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div class="result-section hidden" id="result-section">
+            <div class="result-content">
+                <h1 class="greeting" id="greeting">Xin chào, <br> [tên]</h1>
+                <p class="message">Nhân vật của bạn đã sẵn sàng tham gia hành trình lịch sử rồi đấy!</p>
+
+                <div class="final-avatar">
+                    <div class="final-avatar-container">
+                        <!-- Final avatar will be displayed here -->
+                    </div>
+                </div>
+
+                <div class="final-action-buttons">
+                    <button class="btn-start-lesson" id="btn-start-lesson" data-navigate="courses">Bắt đầu bài học</button>
+                    <button class="btn-edit-character" id="btn-edit-character">Quay lại chỉnh sửa nhân vật</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/avatar-customizer.js"></script>
+    <script src="js/page-transition.js"></script>
+    <script src="js/simple-navigation.js"></script>
+</body>
+
+</html>

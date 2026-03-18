@@ -1,0 +1,833 @@
+/* Reset và thiết lập cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden; /* Ngăn scroll ngang cho toàn trang */
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    background: url('../images/v99_261.png') center/cover no-repeat fixed;
+    background-size: cover;
+    background-position: center center;
+    overflow-x: hidden; /* Ngăn scroll ngang */
+    min-height: 100vh;
+}
+
+/* Dark overlay for better readability */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(126, 8, 9, 0.7);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Page content wrapper for transitions */
+.page-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+    padding-top: 80px; /* Add padding to account for fixed header */
+}
+
+.page-content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Direct page load - no transition */
+.page-content.direct-load {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+    padding-top: 80px; /* Maintain padding for direct load */
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header - Copied from main.css */
+.header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.header.header-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 58px;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #d62829;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.nav-link.active {
+    background-color: rgba(252, 194, 74, 0.4);
+    color: #333;
+}
+
+.nav-link:hover {
+    background-color: rgba(252, 194, 74, 0.4);
+    color: #333;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* User Account Button */
+.user-account {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #7E0809;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.user-account:hover {
+    background: #a10a0b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(126, 8, 9, 0.3);
+}
+
+.user-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Hide mobile auth buttons on desktop */
+.mobile-auth-buttons {
+    display: none;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    background: none;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Courses Section - Now transparent with global background */
+.courses-section {
+    padding: 80px 0 50px 0;
+    margin-top: 0; /* Remove margin since page-content has padding-top */
+    position: relative;
+    background: none; /* Remove background - use global background */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden; /* Ngăn scroll ngang từ các phần tử con */
+}
+
+.courses-section::before {
+    display: none; /* Remove overlay since we have global overlay */
+}
+
+/* Slider wrapper to control overflow while allowing hover effects */
+.slider-wrapper {
+    position: relative;
+    overflow: hidden; /* Hide horizontal scroll */
+    padding: 50px 0; /* Extra padding for center-based scaling */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-bottom: 25px; /* Giảm khoảng cách từ 40px xuống 25px */
+}
+
+.hero-title {
+    color: white;
+    font-size: clamp(20px, 3.5vw, 32px); /* Giảm font size từ clamp(24px, 4vw, 40px) */
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.courses-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 25px 50px; /* Giảm padding từ 30px 60px xuống 25px 50px */
+    display: flex;
+    gap: 25px; /* Giảm gap từ 30px xuống 25px */
+    overflow: visible; /* Allow hover effects to show without clipping */
+    scroll-behavior: smooth;
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+    width: auto; /* Auto width to prevent cutting off */
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth easing */
+    will-change: transform; /* Optimize for transform animations */
+    backface-visibility: hidden; /* Improve performance */
+}
+
+
+
+/* Slider Controls - Improved design */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.slider-btn {
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    pointer-events: auto;
+    color: #333;
+    opacity: 0.8;
+    backdrop-filter: blur(10px);
+}
+
+.slider-btn:hover {
+    background: rgba(252, 194, 74, 0.95);
+    transform: scale(1.15);
+    box-shadow: 0 8px 30px rgba(252, 194, 74, 0.3);
+    color: #fff;
+    opacity: 1;
+}
+
+.slider-btn:active {
+    transform: scale(1.05);
+    transition: transform 0.1s ease;
+}
+
+.slider-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.slider-btn:hover svg {
+    transform: scale(1.2);
+}
+
+/* Simple fade transition for smooth experience */
+.slide-transition {
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+/* Hero Section - Now integrated as background for courses */
+.hero-section {
+    display: none; /* Hidden since background is now part of courses section */
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/v99_261.png') center/cover no-repeat;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(126, 8, 9, 0.8);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.hero-title {
+    color: #fff;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Course Card - Enhanced smooth transitions with center-based scaling */
+.course-card {
+    position: relative;
+    min-width: 260px; /* Giảm từ 300px xuống 260px */
+    max-width: 260px; /* Giảm từ 300px xuống 260px */
+    height: 340px; /* Giảm từ 400px xuống 340px */
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    flex-shrink: 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    will-change: transform; /* Optimize for animations */
+    z-index: 10; /* Above slider controls */
+    transform-origin: center center; /* Scale from center point */
+}
+
+.course-card:hover {
+    transform: scaleY(1.15) scaleX(1.08); /* Kéo dài chiều cao hơn chiều rộng */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    z-index: 200; /* Highest priority when hovering */
+}
+
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    filter: grayscale(100%) brightness(0.7);
+}
+
+/* Đảm bảo ảnh luôn đen trắng khi không hover */
+.course-card:not(:hover) .card-image img {
+    filter: grayscale(100%) brightness(0.7) !important;
+    transform: scale(1) !important;
+}
+
+.course-card:hover .card-image img {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.1);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+/* Đảm bảo overlay luôn đen khi không hover */
+.course-card:not(:hover) .card-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.8) 100%
+    ) !important;
+}
+
+.course-card:hover .card-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(252, 194, 74, 0.2) 0%,
+        rgba(252, 194, 74, 0.6) 50%,
+        rgba(252, 194, 74, 0.9) 100%
+    );
+}
+
+.card-content {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    right: 20px;
+    z-index: 3;
+    color: white;
+    text-align: left;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Đảm bảo content luôn ẩn khi không hover */
+.course-card:not(:hover) .card-content {
+    transform: translateY(30px) !important;
+    opacity: 0 !important;
+}
+
+.course-card:hover .card-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.period {
+    display: block;
+    color: #333;
+    font-size: clamp(10px, 1.6vw, 12px);
+    font-weight: 600;
+    margin-bottom: 5px;
+    transition: all 0.4s ease;
+}
+
+.title {
+    color: #7E0809;
+    font-size: clamp(10px, 1.6vw, 14px); /* Giảm từ clamp(12px, 2vw, 18px) */
+    font-weight: 700;
+    margin-bottom: 6px; /* Giảm từ 8px xuống 6px */
+    line-height: 1.2; /* Giảm từ 1.3 xuống 1.2 */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    white-space: normal;
+    max-width: 100%;
+    transition: all 0.4s ease;
+    text-shadow: none;
+}
+
+.course-card:hover .title {
+    font-size: clamp(11px, 1.7vw, 15px); /* Giảm từ clamp(13px, 2.1vw, 19px) */
+    line-height: 1.2; /* Giảm từ 1.3 xuống 1.2 */
+}
+
+.duration {
+    color: #333;
+    font-size: clamp(10px, 1.7vw, 12px);
+    font-weight: 500;
+    margin: 0;
+    transition: all 0.4s ease;
+}
+
+/* Additional responsive breakpoints */
+@media (max-width: 1200px) {
+    .course-card {
+        min-width: 240px; /* Giảm từ 280px xuống 240px */
+        max-width: 240px;
+        height: 320px; /* Giảm từ 380px xuống 320px */
+    }
+    
+    .courses-container {
+        gap: 22px; /* Giảm từ 25px xuống 22px */
+    }
+
+    .title {
+        font-size: clamp(9px, 1.5vw, 13px); /* Giảm font size */
+        line-height: 1.2;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .course-card:hover .title {
+        font-size: clamp(10px, 1.6vw, 14px); /* Giảm font size */
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 992px) {
+    .course-card {
+        min-width: 220px; /* Giảm từ 260px xuống 220px */
+        max-width: 220px;
+        height: 300px; /* Giảm từ 360px xuống 300px */
+    }
+
+    .title {
+        font-size: clamp(8px, 1.4vw, 12px); /* Giảm font size */
+        line-height: 1.2;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .course-card:hover .title {
+        font-size: clamp(9px, 1.5vw, 13px); /* Giảm font size */
+        line-height: 1.2;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Tắt fixed background trên mobile */
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-left {
+        gap: 20px;
+    }
+    
+    .header {
+        flex-wrap: wrap;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease;
+        padding: 20px 0;
+        z-index: 1001;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+    
+    .nav-menu.mobile-active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 15px 20px;
+        width: 100%;
+    }
+
+    .courses-section {
+        padding: 70px 0 40px 0;
+        margin-top: 0;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: clamp(20px, 3vw, 28px);
+        margin-bottom: 30px;
+    }
+
+    .hero-section {
+        height: 300px;
+    }
+
+    .courses-container {
+        gap: 20px;
+        padding: 0 15px;
+        max-width: 100%;
+        transform: none !important;
+        width: 100% !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        transition: none !important;
+    }
+
+    .course-card {
+        min-width: 260px;
+        max-width: 260px;
+        height: 340px;
+        scroll-snap-align: start;
+    }
+    
+    /* Hide slider controls on mobile */
+    .slider-controls {
+        display: none;
+    }
+    
+    /* Hide slider wrapper on mobile */
+    .slider-wrapper {
+        overflow-x: auto;
+        padding: 20px 0;
+    }
+
+    .title {
+        font-size: clamp(9px, 1.6vw, 14px);
+        line-height: 1.3;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .course-card:hover .title {
+        font-size: clamp(10px, 1.7vw, 15px);
+        line-height: 1.3;
+    }
+
+    .period,
+    .duration {
+        font-size: clamp(8px, 1.3vw, 10px);
+    }
+
+    .card-content {
+        bottom: 12px;
+        left: 15px;
+        right: 15px;
+        min-height: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-attachment: scroll;
+    }
+    
+    .header .container {
+        padding: 10px 15px;
+    }
+    
+    .courses-section {
+        margin-top: 0;
+        padding: 60px 0 30px 0;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: clamp(18px, 3vw, 24px);
+        margin-bottom: 25px;
+    }
+
+    .hero-section {
+        height: 250px;
+    }
+
+    .courses-container {
+        gap: 15px;
+        padding: 0 10px;
+        max-width: 100%;
+        animation: none !important;
+        transform: none !important;
+        width: 100% !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .course-card {
+        min-width: 220px;
+        max-width: 220px;
+        height: 300px;
+        scroll-snap-align: start;
+    }
+    
+    /* Hide slider controls on mobile */
+    .slider-controls {
+        display: none;
+    }
+
+    .card-content {
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+    }
+
+    .title {
+        font-size: clamp(8px, 1.4vw, 12px);
+        line-height: 1.3;
+        margin-bottom: 4px;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .course-card:hover .title {
+        font-size: clamp(9px, 1.5vw, 13px);
+        line-height: 1.3;
+    }
+
+    .period,
+    .duration {
+        font-size: clamp(7px, 1.2vw, 9px);
+    }
+
+    .card-content {
+        bottom: 10px;
+        left: 12px;
+        right: 12px;
+        min-height: 50px;
+    }
+}
+
+/* Responsive logo sizing */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 35px;
+    }
+}
+
+/* Image Expansion Overlay */
+.image-expansion-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.image-expansion-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.expansion-image {
+    position: absolute;
+    object-fit: cover;
+    border-radius: 12px;
+    transform-origin: center center;
+    opacity: 0;
+    transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 10001;
+}
+
+.expansion-image.expanding {
+    opacity: 1;
+}
+
+.expansion-image.full-screen {
+    border-radius: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: scale(1.1);
+}
+
+.expansion-image.fade-out {
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all 0.8s ease-in-out;
+}
+
+/* Course card enhancement */
+.course-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.course-card.clicked {
+    transform: scale(0.98);
+    transition: transform 0.15s ease;
+}

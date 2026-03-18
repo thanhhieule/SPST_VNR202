@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation System Demo</title>
+    <style>
+        body {
+            font-family: 'Be Vietnam', sans-serif;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .nav-button {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .nav-button.secondary {
+            background: linear-gradient(135deg, #4ECDC4, #6DD5ED);
+        }
+        
+        .nav-button.secondary:hover {
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .shortcut-list {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ffeaa7;
+        }
+        
+        .shortcut-list h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        
+        .shortcut-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px dotted #ddd;
+        }
+        
+        .shortcut-key {
+            background: #333;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🚀 Navigation System Demo</h1>
+        
+        <div class="info-box">
+            <h3>📍 Thông tin hệ thống điều hướng:</h3>
+            <p>Hệ thống navigation đã được tích hợp vào tất cả các trang. Bạn có thể sử dụng thuộc tính <code>data-navigate</code> để điều hướng đến các trang khác nhau.</p>
+        </div>
+        
+        <div class="nav-grid">
+            <button class="nav-button" data-navigate="index">🏠 Trang chủ</button>
+            <button class="nav-button" data-navigate="courses">📚 Khóa học</button>
+            <button class="nav-button" data-navigate="login">🔐 Đăng nhập</button>
+            <button class="nav-button secondary" data-navigate="avatar-customizer">👤 Tùy chỉnh avatar</button>
+            <button class="nav-button secondary" data-navigate="register">📝 Đăng ký</button>
+            <button class="nav-button secondary" data-navigate="course5">📖 Bài học 5</button>
+        </div>
+        
+        <div class="shortcut-list">
+            <h3>⌨️ Phím tắt điều hướng:</h3>
+            <div class="shortcut-item">
+                <span>Về trang chủ</span>
+                <span class="shortcut-key">Alt + H</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Đến khóa học</span>
+                <span class="shortcut-key">Alt + C</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Đến đăng nhập</span>
+                <span class="shortcut-key">Alt + L</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Tùy chỉnh avatar</span>
+                <span class="shortcut-key">Alt + A</span>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h3>💡 Cách sử dụng:</h3>
+            <ul>
+                <li>Thêm thuộc tính <code>data-navigate="tên-trang"</code> vào bất kỳ element nào</li>
+                <li>Hỗ trợ cả tên tiếng Anh và tiếng Việt</li>
+                <li>Có hiệu ứng loading và transition mượt mà</li>
+                <li>Tương thích với tất cả các trang trong website</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h3>📝 Ví dụ code:</h3>
+            <pre><code>&lt;button data-navigate="courses"&gt;Đến khóa học&lt;/button&gt;
+&lt;a data-navigate="login"&gt;Đăng nhập&lt;/a&gt;
+&lt;div data-navigate="index"&gt;Về trang chủ&lt;/div&gt;</code></pre>
+        </div>
+    </div>
+
+    <script src="js/navigation.js"></script>
+    <script>
+        // Additional demo functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📱 Navigation Demo loaded!');
+            console.log('🎯 Try clicking the buttons above or using keyboard shortcuts!');
+        });
+    </script>
+</body>
+</html>

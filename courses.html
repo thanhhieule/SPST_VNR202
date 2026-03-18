@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam+Pro:300,400,500,600,700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam:300,400,500,600,700&display=swap" rel="stylesheet" />
+    <link href="css/courses.css" rel="stylesheet" />
+    <link href="css/page-transition.css" rel="stylesheet" />
+    <title>Khóa học - Việt Sử Ký</title>
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div id="pageLoader" class="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="images/logo.png" alt="Việt Sử Ký Logo">
+            </div>
+            <div class="loader-title">Việt Sử Ký</div>
+            <div class="loader-text">Đang tải...</div>
+            <div class="loader-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="progress-percentage">0%</div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-left">
+                <div class="logo" data-navigate="index">
+                    <img  data-navigate="index" src="images/logo.png" alt="Việt Sử Ký Logo" class="logo-image">
+                </div>
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" data-navigate="index" class="nav-link">Trang chủ</a></li>
+                        <li><a href="#" class="nav-link active">Khoá học</a></li>
+                        <li><a href="#pricing" class="nav-link">Chi phí</a></li>
+                        <li><a href="#about" class="nav-link">Về chúng tôi</a></li>
+                        <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="auth-buttons">
+                <div class="user-account">
+                    <svg class="user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span data-navigate="avatar-customizer">Tài khoản</span>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Content Wrapper -->
+    <div class="page-content">
+        <!-- Courses Section -->
+        <section class="courses-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Lựa chọn giai đoạn lịch sử</h1>
+            </div>
+
+            <!-- Slider Controls -->
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn" id="prevBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button class="slider-btn next-btn" id="nextBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Slider Wrapper -->
+            <div class="slider-wrapper">
+                <div class="courses-container">
+                    <div class="course-card" data-course-link="">
+                        <div class="card-image">
+                            <img src="images/v99_280.png" alt="Dựng nước">
+                        </div>
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="period">Thời kỳ</span>
+                            <h3 class="title">Dựng nước</h3>
+                            <p class="duration">TCN - 179 TCN</p>
+                        </div>
+                    </div>
+
+
+                    <div class="course-card" data-course-link="">
+                        <div class="card-image">
+                            <img src="images/v99_282.png" alt="Bắc thuộc">
+                        </div>
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="period">Thời kỳ</span>
+                            <h3 class="title">Bắc thuộc</h3>
+                            <p class="duration">179 TCN - 938 SCN</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-course-link="">
+                        <div class="card-image">
+                            <img src="images/v99_303.png" alt="Phong Kiến">
+                        </div>
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="period">Thời kỳ</span>
+                            <h3 class="title">Phong Kiến</h3>
+                            <p class="duration">938 - 1858</p>
+                        </div>
+                    </div>
+
+
+                    <div class="course-card" data-course-link="">
+                        <div class="card-image">
+                            <img src="images/v99_308.png" alt="Thực dân Pháp, Nhật đô hộ">
+                        </div>
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="period">Thời kỳ</span>
+                            <h3 class="title">Thực dân Pháp, Nhật đô hộ</h3>
+                            <p class="duration">1858 - 1945</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-course-link="course5.html">
+                        <div class="card-image">
+                            <img src="images/v99_320.png" alt="Kháng chiến chống Pháp">
+                        </div>
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="period">Thời kỳ</span>
+                            <h3 class="title">Kháng chiến chống Pháp</h3>
+                            <p class="duration">1945 - 1954</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-course-link="">
+                        <div class="card-image">
+                            <img src="images/v101_8.png" alt="Kháng chiến chống Mỹ">
+                        </div>
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="period">Thời kỳ</span>
+                            <h3 class="title">Kháng chiến chống Mỹ</h3>
+                            <p class="duration">1954 - 1975</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-course-link="">
+                        <div class="card-image">
+                            <img src="images/v101_7.png" alt="Độc lập thống nhất cả nước đi lên CNXH">
+                        </div>
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="period">Thời kỳ</span>
+                            <h3 class="title">Độc lập thống nhất cả nước đi lên CNXH</h3>
+                            <p class="duration">1975 - nay</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Image Expansion Overlay -->
+    <div id="imageExpansionOverlay" class="image-expansion-overlay">
+        <img id="expansionImage" class="expansion-image" src="" alt="">
+    </div>
+    
+    <script src="js/navigation.js"></script>
+    <script src="js/courses-slider.js"></script>
+    <script src="js/page-transition.js"></script>
+    <script src="js/simple-navigation.js"></script>
+</body>
+
+</html>

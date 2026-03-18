@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Open Login Page",
+			"type": "shell",
+			"command": "start login.html",
+			"group": "build"
+		}
+	]
+}

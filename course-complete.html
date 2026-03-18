@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam+Pro:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet" />
+    <link href="css/course-complete.css" rel="stylesheet" />
+    <title>Hoàn thành khóa học - Điện Biên Phủ</title>
+    <link href="css/page-transition.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div id="pageLoader" class="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="images/logo.png" alt="Việt Sử Ký Logo">
+            </div>
+            <div class="loader-title">Việt Sử Ký</div>
+            <div class="loader-text">Đang tải...</div>
+            <div class="loader-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="progress-percentage">0%</div>
+        </div>
+    </div>
+    <!-- Fireworks Container -->
+    <div class="fireworks-container"></div>
+
+    <!-- Main Content -->
+    <div class="completion-page">
+        <!-- Character Image -->
+        <div class="character-container">
+            <img src="images/v0_4866.png" alt="Graduation Character" class="character-image">
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="main-title">Tuyệt Vời!</h1>
+        <p class="subtitle">Chúc mừng bạn đã hoàn thành bài học</p>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="btn-continue" data-navigate="courses">Nhấn để tiếp tục</button>
+            <button class="btn-home"  data-navigate="index">Quay về trang chủ</button>
+        </div>
+    </div>
+
+    <script>
+        // Fireworks animation
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(startFireworks, 500);
+            setInterval(startFireworks, 2000);
+        });
+
+        function startFireworks() {
+            const container = document.querySelector('.fireworks-container');
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff'];
+
+            // Create multiple fireworks
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    createFirework(container, colors);
+                }, i * 300);
+            }
+        }
+
+        function createFirework(container, colors) {
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+
+            // Random position
+            firework.style.left = Math.random() * 80 + 10 + '%';
+            firework.style.top = Math.random() * 40 + 20 + '%';
+
+            // Random color
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            firework.style.setProperty('--firework-color', color);
+
+            container.appendChild(firework);
+
+            // Remove after animation
+            setTimeout(() => {
+                firework.remove();
+            }, 1500);
+        }
+
+        function continueToNext() {
+            alert('Chuyển đến bài học tiếp theo!');
+        }
+
+        function goToHome() {
+            window.location.href = 'index.html';
+        }
+    </script>
+    <script src="js/page-transition.js"></script>
+    <script src="js/simple-navigation.js"></script>
+</body>
+
+</html>

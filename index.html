@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam+Pro:300,400,500,600,700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam:300,400,500,600,700&display=swap" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/page-transition.css" rel="stylesheet" />
+    <title>Việt Sử Ký - Trang học lịch sử Việt Nam</title>
+    <script>
+        // Immediate loader hide for back navigation
+        if (window.performance && window.performance.navigation.type === 2) {
+            // This is back/forward navigation - hide loader immediately
+            document.addEventListener('DOMContentLoaded', function () {
+                const loader = document.getElementById('pageLoader');
+                if (loader) {
+                    loader.style.display = 'none';
+                }
+                const pageContent = document.querySelector('.page-content');
+                if (pageContent) {
+                    pageContent.style.opacity = '1';
+                    pageContent.style.transform = 'translateY(0)';
+                }
+                // Header will be handled by script.js
+                document.body.style.opacity = '1';
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div id="pageLoader" class="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="images/logo.png" alt="Việt Sử Ký Logo">
+            </div>
+            <div class="loader-title">Việt Sử Ký</div>
+            <div class="loader-text">Đang tải...</div>
+            <div class="loader-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="progress-percentage">0%</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-left">
+                <div class="logo">
+                    <img data-navigate="index" src="images/logo.png" alt="Việt Sử Ký Logo" class="logo-image">
+                </div>
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a data-navigate="index" href="#" class="nav-link active">Trang chủ</a></li>
+                        <li><a href="courses.html" data-navigate="courses" class="nav-link">Khoá học</a></li>
+                        <li><a href="#pricing" class="nav-link">Chi phí</a></li>
+                        <li><a href="#about" class="nav-link">Về chúng tôi</a></li>
+                        <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+                        <!-- Mobile Auth Buttons -->
+                        <li class="mobile-auth-buttons">
+                            <button data-navigate="register" class="btn btn-outline">Đăng Ký</button>
+                            <a href="login.html" class="btn btn-primary" data-navigate="login">Đăng Nhập</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="auth-buttons">
+                <button data-navigate="register" class="btn btn-outline">Đăng Ký</button>
+                <a href="login.html" class="btn btn-primary" data-navigate="login">Đăng Nhập</a>
+            </div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-content">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-greeting">Chào mừng bạn đến với</p>
+                    <h1 class="hero-title">Việt Sử Ký</h1>
+                    <p class="hero-subtitle">Cùng bạn ngược dòng lịch sử, chạm vào hồn thiêng dân tộc</p>
+                    <br>
+                    <p>Khám phá dòng chảy lịch sử Việt Nam qua mô hình 3D, thực tế ảo (AR), mini-games và thư viện tương
+                        tác. Tạo nhân vật – Chọn thời đại – Học sử như chưa từng học trước đây</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What makes us different section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-content">
+                    <div class="features-text">
+                        <h2 class="features-title">
+                            <span class="features-title-small">Tại sao chọn</span>
+                            <span class="features-title-large">Việt Sử Ký?</span>
+                        </h2>
+                        <p class="features-description">
+                            Việt Sử Ký là nền tảng học lịch sử Việt Nam tương tác, giúp người học khám phá quá khứ dân
+                            tộc một cách sống động, dễ nhớ và đầy cảm xúc. Tại đây, chúng tôi mang lịch sử đến gần hơn
+                            với thế hệ trẻ thông qua công nghệ hiện đại và tư duy giáo dục đổi mới.
+
+                        </p>
+                    </div>
+                    <div class="features-cards">
+                        <div class="feature-card">
+                            <div class="feature-number">01</div>
+                            <h3 class="feature-title">Bài giảng khoa học</h3>
+                            <p class="feature-description">
+                                Nội dung được biên soạn bài bản bởi đội ngũ chuyên gia sử học, đảm bảo tính chính xác,
+                                hệ thống và bám sát chương trình giáo dục. Mỗi bài học đều được phân tích, minh họa rõ
+                                ràng, giúp học sinh hiểu sâu – nhớ lâu.
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">02</div>
+                            <h3 class="feature-title">Phương pháp học hiện đại</h3>
+                            <p class="feature-description">
+                                Việt Sử Ký kết hợp công nghệ 3D, AR, video tương tác và trò chơi hóa (gamification) để
+                                mang đến trải nghiệm học lịch sử sinh động, chủ động và cuốn hút. Học mà như chơi – tiếp
+                                thu kiến thức một cách tự nhiên.
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">03</div>
+                            <h3 class="feature-title">Hỗ trợ học tập 24/7</h3>
+                            <p class="feature-description">
+                                Học sinh có thể truy cập nội dung mọi lúc, mọi nơi. Hệ thống luôn sẵn sàng hỗ trợ giải
+                                đáp, gợi ý bài học phù hợp, và cung cấp công cụ theo dõi tiến độ. Giáo viên và phụ huynh
+                                cũng có thể đồng hành dễ dàng qua dashboard riêng.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements section -->
+        <section class="achievements">
+            <div class="container">
+                <div class="achievements-content">
+                    <div class="achievements-text">
+                        <h2 class="achievements-title">Việt Sử Ký đã thực hiện</h2>
+
+                    </div>
+                    <div class="achievements-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">10,000+</div>
+                            <div class="stat-label">Lượt đăng ký<br>tài khoản</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5,000+</div>
+                            <div class="stat-label">Lượt truy cập<br>mỗi ngày</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1,500+</div>
+                            <div class="stat-label">Đánh giá<br>tích cực</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Trường tham gia<br>thử nghiệm</div>
+                        </div>
+                    </div>
+                    <br> <br>
+                    <div class="achievements-text">
+                        <p class="achievements-description">
+                            Và nhận được vô vàn phản hồi tích cực từ cộng đồng yêu lịch sử!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback section -->
+        <section class="feedback">
+            <div class="container">
+                <div class="feedback-header">
+                    <div class="feedback-title">
+                        <h2>Cảm nhận từ người dùng</h2>
+                        <p>Những chia sẻ chân thật từ giáo viên, học sinh và phụ huynh sau khi trải nghiệm Việt Sử Ký -
+                            một hành trình lịch sử sống động và đầy cảm hứng.</p>
+                    </div>
+                    <button class="btn btn-outline">Xem tất cả</button>
+                </div>
+                <div class="feedback-grid">
+                    <div class="feedback-card">
+                        <p class="feedback-text">
+                            "Tôi đã dạy Lịch sử hơn 15 năm và đây là lần đầu tiên học sinh của tôi hào hứng đến vậy!
+                            Việt Sử Ký không chỉ trực quan mà còn giúp tôi dễ dàng giao bài, theo dõi tiến độ của từng
+                            em."
+                        </p>
+                        <div class="feedback-author">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <img src="https://i.pravatar.cc/50?img=1" alt="Sarah L">
+                                </div>
+                                <div class="author-details">
+                                    <span class="author-name">Nguyễn Văn H.</span>
+                                    <span class="author-job">Giáo viên Lịch sử, THCS Lê Lợi</span>
+                                </div>
+                            </div>
+                            <button class="read-more">Read Full Story</button>
+                        </div>
+                    </div>
+                    <div class="feedback-card">
+                        <p class="feedback-text">
+                            "Con tôi trước đây rất sợ môn Sử, nhưng từ khi dùng Việt Sử Ký, cháu chủ động học, kể lại
+                            lịch sử như đang xem phim. Một ứng dụng rất giá trị!"
+                        </p>
+                        <div class="feedback-author">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <img src="https://i.pravatar.cc/50?img=11" alt="Jason M">
+                                </div>
+                                <div class="author-details">
+                                    <span class="author-name">Nguyễn Thị Thanh</span>
+                                    <span class="author-job">Phụ huynh học sinh</span>
+                                </div>
+                            </div>
+                            <button class="read-more">Read Full Story</button>
+                        </div>
+                    </div>
+                    <div class="feedback-card">
+                        <p class="feedback-text">
+                            "Mỗi nhân vật lịch sử như sống dậy qua các hoạt động tương tác và trò chơi. Em học mà không
+                            thấy chán chút nào, còn nhớ bài rất lâu!"
+
+                        </p>
+                        <div class="feedback-author">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <img src="https://i.pravatar.cc/50?img=5" alt="Emily R">
+                                </div>
+                                <div class="author-details">
+                                    <span class="author-name">Trần Gia Linh</span>
+                                    <span class="author-job">Học sinh lớp 12, Hà Nội</span>
+                                </div>
+                            </div>
+                            <button class="read-more">Read Full Story</button>
+                        </div>
+                    </div>
+                    <div class="feedback-card">
+                        <p class="feedback-text">
+                            "Đây là mô hình học lịch sử tiên tiến, rất phù hợp với đổi mới giáo dục. Tôi đánh giá cao
+                            cách Việt Sử Ký kết hợp công nghệ với văn hóa truyền thống."
+                        </p>
+                        <div class="feedback-author">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <img src="https://i.pravatar.cc/50?img=8" alt="Michael K">
+                                </div>
+                                <div class="author-details">
+                                    <span class="author-name">Lê Anh Tuấn</span>
+                                    <span class="author-job">Chuyên viên Sở Giáo dục</span>
+                                </div>
+                            </div>
+                            <button class="read-more">Read Full Story</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing section -->
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <h2 class="pricing-title">Chọn gói học phù hợp</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="plan-name">Gói trải nghiệm</h3>
+                            <div class="plan-price">
+                                <span class="price">0 ₫</span>
+                                <span class="period">/tháng</span>
+                            </div>
+                            <p class="plan-description">
+                                Trải nghiệm miễn phí trước khi quyết định sử dụng lâu dài.
+                            </p>
+                        </div>
+                        <div class="pricing-features">
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Truy cập giới hạn các bài học lịch sử</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Trải nghiệm mini-game cơ bản</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Xem trước giao diện nhân vật và mô phỏng 3D</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline pricing-btn">Lựa chọn</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="plan-name">Gói truy cập cơ bản</h3>
+                            <div class="plan-price">
+                                <span class="price">29.000 ₫</span>
+                                <span class="period">/lượt</span>
+                            </div>
+                            <p class="plan-description">
+                                Gói cơ bản cho người dùng phổ thông học và khám phá trên nền web.
+                            </p>
+                        </div>
+                        <div class="pricing-features">
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Truy cập giới hạn các bài học lịch sử</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Mở khóa tính năng tương tác 3D cơ bản</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Tùy chỉnh nhân vật đại diện</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline pricing-btn">Lựa chọn</button>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="pricing-header">
+                            <h3 class="plan-name">Gói nâng cao</h3>
+                            <div class="plan-price">
+                                <span class="price">159.000 ₫</span>
+                                <span class="period">/tháng</span>
+                            </div>
+                            <p class="plan-description">
+                                Gói toàn diện dành cho người học muốn trải nghiệm trọn vẹn và nâng cao.
+                            </p>
+                        </div>
+                        <div class="pricing-features">
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Truy cập toàn bộ bài học, trò chơi tương tác và mô phỏng 3D</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Mở khóa tất cả nhân vật và nhiệm vụ tương tác</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Sử dụng bản đồ lịch sử, mô hình AR</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Không quảng cáo</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Ưu tiên hỗ trợ kỹ thuật</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary pricing-btn">Lựa chọn</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="plan-name">Gói trường học</h3>
+                            <div class="plan-price">
+                                <span class="price">280.000.000 ₫</span>
+                                <span class="period">/năm</span>
+                            </div>
+                            <p class="plan-description">
+                               Gói đặc biệt dành cho trường học, tích hợp quản lý và đào tạo số lượng lớn
+                            </p>
+                        </div>
+                        <div class="pricing-features">
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Quản lý lớp học, giao bài, theo dõi tiến độ học sinh</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Tài khoản cho giáo viên và học sinh không giới hạn</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Truy cập toàn bộ nội dung và tài nguyên bổ trợ giáo án</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Hỗ trợ triển khai, đào tạo sử dụng cho nhà trường</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline pricing-btn">Lựa chọn</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="js/navigation.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/page-transition.js"></script>
+        <script src="js/simple-navigation.js"></script>
+    </div>
+</body>
+
+</html>
